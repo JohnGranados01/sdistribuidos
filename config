@@ -1,0 +1,9 @@
+{
+    "conexion":{
+        "server" : "localhost",
+        "user" : "root",
+        "password" : "",
+        "database" : "bd_colegio_estudiante",
+        "port": "3308"
+    }
+}
