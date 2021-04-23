@@ -41,6 +41,11 @@ class Conexion {
 
   public function insercion($sqlstr){
       $this->conexion->query($sqlstr);
+      $msg = array(
+          'filas_afectadas'=> $this->conexion->affected_rows,
+          'error'=>$this->conexion->error 
+      );
+      return $msg;
   }
 
   private function convertirUTF8($array){

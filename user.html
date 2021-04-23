@@ -9,36 +9,77 @@
     <title>Estudiante</title>
 </head>
 <body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.php">Home</a>
+    </div>
+  </nav>
     <div class="container">
         <div class="text">
             <h1 class="display-4">Agregar Nuevo Estudiante</h1>
         </div>
         
-        
-            <form action="addEstudent.php" style="margin-top: 10px;" method="POST">
-                    <div class="row">
-                      <div class="col-sm">
-                        <label for="id" class="form-label">Numero de identificación:</label>
-                        <input type="number" class="form-control" id="id" name="Identificacion">
+                  <form class="row g-3 needs-validation" action="addEstudent.php" style="margin-top: 10px;" method="POST" novalidate>
+                    <div class="col-md-4">
+                      <label for="id" class="form-label">Numero de identificación:</label>
+                      <input type="text" class="form-control" id="id" required onkeypress="onlyNums(event)" name="Identificacion">
+                      <div class="valid-feedback">
+                        Bien!
                       </div>
-                      <div class="col-sm">
-                        <label for="name" class="form-label">Nombres y Apellidos:</label>
-                        <input type="text" class="form-control" id="name" name="full-name">
-                      </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <label class="form-label" for="edad">Edad:</label>
-                        <input type="number" class="form-control" id="edad" name="Edad">
-                        
+                      <div class="invalid-feedback">
+                        Ingrese lo que se le pide, por favor!
                       </div>
                     </div>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <div class="col-md-4">
+                      <label for="name" class="form-label">Nombres y Apellidos:</label>
+                      <input type="text" class="form-control" id="name" required name="full-name">
+                      <div class="valid-feedback">
+                        Bien!
+                      </div>
+                      <div class="invalid-feedback">
+                        Ingrese lo que se le pide, por favor!
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label" for="edad">Edad:</label>
+                      <div class="input-group has-validation">
+                        <input type="text" class="form-control" id="edad" aria-describedby="inputGroupPrepend" required name="Edad">
+                        <div class="invalid-feedback">
+                          Ingrese lo que se le pide, por favor!
+                        </div>
+                        <div class="valid-feedback">
+                          Bien!
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-primary" type="submit">Enviar</button>
+                    </div>
                   </form>
-            </form>
     </div>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+          .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+
+              form.classList.add('was-validated')
+            }, false)
+          })
+      })()
+    </script>
+    <script src="js/script.js"></script>
     
 </body>
 </html>

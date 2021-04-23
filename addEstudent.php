@@ -8,5 +8,10 @@
 
     $conexion = new Conexion;
     $sqlstr = "INSERT INTO estudiante VALUES($id,'$nombre',$edad)";
-    $conexion->insercion($sqlstr);
+    $result = $conexion->insercion($sqlstr);
+    if($result['filas_afectadas']==-1){
+        print_r($result);
+    }else{
+        echo 'Todo Bien, no hay Error!';
+    }
 ?>

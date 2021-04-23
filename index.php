@@ -8,14 +8,9 @@
   <body>
     <div class="container">
     <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="user.html">Agregar</a>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="user.html">Agregar Sin Error</a>
+      </div>
     </nav>
       <h1 class="display-4 text-center">Colegio pinceladas</h1>
       <br>
